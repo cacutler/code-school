@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dice App</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <h1>Dice App</h1>
+            <input type="number" v-model="sides">
+            <button v-on:click="createDice()">Create Dice</button>
+            <div id="dive-container">
+                <div class="die" v-for="(die, index) in dice" v-on:click="rollDice(index)" v-on:click.meta="deleteDice(index)">
+                    <p>{{die.sides}}</p>
+                    <p>{{die.value}}</p>
+                </div>
+                <button v-on:click="rollAllDice()">Roll All Dice</button>
+            </div>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>

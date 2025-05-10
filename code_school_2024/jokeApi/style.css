@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+#top-section {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+input {
+    margin: 0.5rem;
+    padding: 1rem;
+    border: 1px solid black;
+}
+#random-joke {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+#joke-paragraph {
+    font-size: 1.5rem;
+}
+button {
+    padding: 1rem;
+    background-color: blue;
+    color: white;
+    border-style: none;
+    border-radius: 3px;
+}
+#jokes > div:nth-child(even) {
+    background-color: blue;
+    color: white;
+}
+#jokes > div:nth-child(odd) {
+    background-color: lightblue;
+}
+#jokes {
+    margin: 0.5rem;
+}
+.joke {
+    padding: 0.5rem;
+}

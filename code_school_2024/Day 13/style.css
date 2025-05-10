@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#app {
+    margin: auto;
+    width: 50%;
+}
+#top-section {
+    display: flex;
+    flex-flow: column nowrap;
+}
+h1, h2 {
+    text-align: center;
+}
+input {
+    width: 100%;
+}
+#search-bar {
+    text-align: center;
+}
+.row-body {
+    background-color: rgba(255, 255, 255, 0.2);
+    height: 60px;
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem;
+}
+.button-container {
+    display: flex;
+    gap: 1rem;
+}

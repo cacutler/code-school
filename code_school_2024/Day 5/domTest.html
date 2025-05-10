@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Presentation</title>
+    <link rel="stylesheet" href="styles.css">
+    <script language="javascript">
+      function changeTextRed() {
+        let el = document.getElementById('eventsHeader');
+        if (el) {
+          el.style.color = 'red';
+        }
+      }
+      function changeEventsHeader() {
+        let el = document.getElementById('eventsHeader');
+        if (el) {
+          el.innerHTML = 'Events Changed!';
+        }
+      }
+      function doNotLeave() {
+        alert("Don't leave me!");
+      }
+      function readTheKey(event) {
+        console.log('event.key', event.key);
+      }
+      document.addEventListener('DOMContentLoaded', function () {
+        const textarea = document.getElementById('myTextarea');
+        if (textarea) {
+          textarea.addEventListener('keydown', readTheKey);
+        }
+      });
+      function changeInputStyle() {
+        let el = document.getElementById('inputText');
+        debugger
+        if (el) {
+          el.style.border = '5px solid orange';
+          el.style.borderRadius = '15px';
+          el.style.padding = '5px';
+          el.style.fontFamily = 'Impact';
+        }
+      }
+      function highlightSpan() {
+        let el = document.getElementById('theParent');
+        if (el) {
+          let firstNode = el.firstElementChild;
+          if (firstNode) {
+            let nextNode = firstNode.nextElementSibling;
+            if (nextNode) {
+              nextNode.style.backgroundColor = 'yellow';
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>The DOM</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><div style="height: 40px">&nbsp;</div></li>
+      </ul>
+    </nav>
+    <main>
+      <section>
+        <h2 id="eventsHeader" onclick=changeTextRed()>Events</h2>
+        <p ondblclick=changeEventsHeader()>Click on the Events header above and then double click on this sentence.</p>
+      </section>
+      <hr/>
+      <section>
+        <h2>Input elements</h2>
+        <p><input value="Some text here" id="inputText" onblur=doNotLeave()></p>
+        <p><input type="checkbox" id="myCheckbox"><label for="myCheckbox">I want to know more.</label></p>
+        <p>
+          <input type="radio" name="myRadio">1
+          <input type="radio" name="myRadio">2
+          <input type="radio" name="myRadio">3
+          <input type="radio" name="myRadio">4
+        </p>
+        <p><textarea id="myTextarea">The textarea</textarea></p>
+      </section>
+      <hr />
+      <section>
+        <h2>Style</h2>
+        <button onclick=changeInputStyle()>Change input style</button>
+      </section>
+      <hr />
+      <section>
+        <h2>Element Nodes</h2>
+        <div id="theParent">
+          <div>This is a hierarchy of elements.</div>
+          <span>A span here.</span>
+          <div>Another div here.</div>
+        </div>
+        <br/>
+        <button onclick=highlightSpan()>Highlight the span</button>
+      </section>
+    </main>
+  </body>
+</html>

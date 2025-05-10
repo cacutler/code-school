@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>To Do List</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <h1>Todo List</h1>
+            <div id="top-section">
+                <h2>Add Item</h2>
+                <label class="label-input">
+                    <span>Description</span>
+                    <input type="text" class="form-input" v-model="description">
+                </label>
+                <label class="label-input">
+                    <span>Category</span>
+                    <input type="text" class="form-input" v-model="category">
+                </label>
+                <button v-on:click="addTask()" v-if="!isEditing">Add</button>
+                <button v-if="isEditing" v-on:click="updateTask()">Save</button>
+                <div id="search-bar">
+                    <p>Filter by Category</p>
+                    <input type="text" placeholder="Search..." v-model="searchInput">
+                </div>
+            </div>
+            <div id="bottom-section">
+                <div class="row-body" v-for="(task, index) in filteredTasks">
+                    <div>{{task.description}}</div>
+                    <div>{{task.category}}</div>
+                    <div class="button-container">
+                        <button v-on:click="editTask(index)">Edit</button>
+                        <button v-on:click="deleteTask(index)">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>

@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#mixerhero {
+    background-image: url(mixer-2586320_1280.jpg);
+    max-width: 1200px;
+    height: 450px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.column {
+    flex: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.row {
+    flex-wrap: wrap;
+    align-items: center;
+}
+.roboto-light {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+.roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+body div h1 {
+    color: white;
+    margin: 1rem;
+}
+body div p {
+    color: white;
+    margin: 1rem;
+}
+body div button {
+    background-color: aqua;
+    padding: 0.5rem;
+    border: none;
+    color: white;
+    border-radius: 5%;
+    width: 125px;
+    margin: 1rem;
+}
+.horizontal-text {
+    padding: 0 auto;
+}
+button:hover {
+    background-color: gold;
+    color: black;
+}
+@media screen and (max-width: 960px) {
+    #mixerhero {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 600px) {
+    #mixerhero {
+        width: 80%;
+    }
+}

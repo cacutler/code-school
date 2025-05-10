@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Vue.js</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h2>Add student</h2>
+      <input v-model="student_name">
+      <input v-model="student_major">
+      <button v-on:click="addStudent()">addStudent</button>
+      <ul>
+        <li v-for="student in students">
+          <div style="display: flex; justify-content: center">{{student.name}} majors in {{student.major}}</div>
+        </li>
+      </ul>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

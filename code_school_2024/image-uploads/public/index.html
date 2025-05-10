@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Image Uploads</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <h1>Image Upload</h1>
+            <form @submit.prevent="createPost()">
+                <input type="text" placeholder="Title" v-model="title">
+                <input type="text" placeholder="Content" v-model="content">
+                <input type="file" v-on:change="handleFileUpload">
+                <button>Create post</button>
+            </form>
+            <div v-if="posts.length > 0">
+                <h2>Posts</h2>
+                <div v-for="post in posts">
+                    <h3>{{post.title}}</h3>
+                    <p>{{post.content}}</p>
+                    <img v-bind:src="'data:' + post.imageType + ';base64,' + post.image" alt="Post image">
+                </div>
+            </div>
+            <div v-else>No posts available</div>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>

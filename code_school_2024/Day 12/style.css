@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+#top-bar {
+    background-color: rgb(0, 0, 48);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    height: 100px;
+    padding: 2rem;
+}
+#search-bar {
+    display: flex;
+    align-items: center;
+}
+#clear-search {
+    font-size: 1rem;
+    padding: 0.5rem;
+    color: white;
+    background-color: red;
+    border-radius: 0px 5px 5px 0px;
+}
+input {
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px 0px 0px 5px;
+    border: none;
+}
+.row-head, .row-body, .row-footer {
+    background-color: rgba(255, 255, 255, 0.2);
+    height: 60px;
+    display: grid;
+    grid-template-columns: 4fr 2fr 3fr 1fr 1fr;
+    align-items: center;
+    padding: 12px 24px;
+    margin: 6px 0;
+}
+.button-container {
+    display: flex;
+    gap: 1rem;
+}
+#expenses > div:nth-child(even) {
+    background-color: rgba(129, 129, 129, 0.25);
+}
+.green {
+    color: green;
+}
+.red {
+    color: red;
+}
+.no-select {
+    user-select: none;
+}
+.modal {
+    background-color: rgba(255, 255, 255, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+#close {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    font-weight: bold;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+h2 {
+    text-align: center;
+}
+.modal-input {
+    border-radius: 5px;
+    background-color: rgb(202, 202, 202);
+}
+.modal .content {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.form-input {
+    border-radius: 5px;
+    background-color: rgb(202, 202, 202);
+    margin: 1rem;
+}
+.add-form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}

@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    display: flex;
+    gap: 20px;
+    min-height: 450px;
+    max-width: 800px;
+}
+#box {
+    height: 400px;
+    width: 400px;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/*tablet devices*/
+@media screen and (max-width: 960px) {
+    
+}
+/*mobile devices*/
+@media screen and (max-width: 600px) {
+    header {
+        flex-direction: column;
+    }
+    #box {
+        background-image: url(awardsImage.png);
+        height: 250px;
+        width: 250px;
+    }
+}
+.lora-light {
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+.lora-bold {
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+button {
+    background-color: black;
+    color: white;
+    border: none;
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    width: 150px;
+    height: 30px;
+    border-radius: 3%;
+}
+button:hover {
+    transform: scale(1.05);
+}
+::marker {
+    color: gold;
+    font-size: 50px;
+}
+img {
+    max-height: 400px;
+    max-width: 400px;
+}

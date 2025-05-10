@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Address Book</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="app">
+            <h1>Address Book</h1>
+            <input placeholder="Enter name" type="text" v-model="name" v-on:keyup="showingAddButton()">
+            <input placeholder="Enter address" type="email" v-model="address" v-on:keyup="showingAddButton()">
+            <button v-on:click="addContact()" id="record" v-if="name.length !== 0 && address.length !== 0 && !isEditing">Record Address</button>
+            <button v-if="isEditing" v-on:click="saveEdit()">Save Address</button>
+            <ul>
+                <li v-for="(contact, index) in book">
+                    <p>{{contact.name}}</p>
+                    <p>{{contact.address}}</p>
+                    <button v-on:click="deleteContact(index)">X</button>
+                    <button v-on:click="editContact(index)">Edit</button>
+                </li>
+            </ul>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
